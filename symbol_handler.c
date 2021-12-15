@@ -1,9 +1,8 @@
-//
 // symbol_handler.c: detects symbols within a commands buffer, and proceeds to sync A_COMMANDS, references to labels,
 // addresses to the referenced label ones (L_COMMAND).
 //
 
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
@@ -31,10 +30,11 @@
 #define SCREEN_VALUE 0b0100000000000000
 #define KEYBOARD_SYMBOL "KBD"
 #define KEYBOARD_VALUE 0b0110000000000000
-
+/* function declaration */
 void dispose_array_of_strings(char** buffer, size_t length);
 void dispose_ram_addresses(t_array_list* symbol_table, char** ram_symbols);
 
+/* main function */
 int sync_symbol_addresses(t_array_list* commands_buffer) {
     if (commands_buffer == NULL) {
         printf("Internal Error: null 'commands_buffer' at 'sync_symbol_addresses'.\n");
